@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  hackathon-cognito-authorizer
+
+  Sample SAM Template for hackathon-cognito-authorizer
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  HackathonCognitoAuthorizerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: cognito-authorizer
+      CodeUri: app/
+      Handler: app.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          COGNITO_USER_POOL_ID: "us-east-1_Em4UXsuDH"
+          COGNITO_CLIENT_ID: "5prudlablf0cd3mhlpc76su5c2"
+
+Outputs:
+  HackathonCognitoAuthorizerFunction:
+    Description: "Hackathon Cognito Authorizer Lambda Function ARN"
+    Value: !GetAtt HackathonCognitoAuthorizerFunction.Arn
+  HackathonCognitoAuthorizerFunctionIamRole:
+    Description: "Implicit IAM Role created for HackathonCognitoAuthorizer function"
+    Value: !GetAtt HackathonCognitoAuthorizerFunctionRole.Arn
