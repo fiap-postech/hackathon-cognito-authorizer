@@ -14,7 +14,7 @@ Resources:
   HackathonCognitoAuthorizerFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      FunctionName: cognito-authorizer
+      FunctionName: hackathon-cognito-authorizer
       CodeUri: app/
       Handler: app.handler
       Runtime: nodejs18.x
@@ -22,8 +22,8 @@ Resources:
         - x86_64
       Environment:
         Variables:
-          COGNITO_USER_POOL_ID: "us-east-1_Em4UXsuDH"
-          COGNITO_CLIENT_ID: "5prudlablf0cd3mhlpc76su5c2"
+          COGNITO_USER_POOL_ID: "us-east-1_3u3ubanZC"
+          COGNITO_CLIENT_ID: "717ev73puc69gbd0c6elm86dqu"
 
 Outputs:
   HackathonCognitoAuthorizerFunction:
