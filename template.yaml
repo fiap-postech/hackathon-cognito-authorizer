@@ -22,8 +22,8 @@ Resources:
         - x86_64
       Environment:
         Variables:
-          COGNITO_USER_POOL_ID: "us-east-1_3u3ubanZC"
-          COGNITO_CLIENT_ID: "717ev73puc69gbd0c6elm86dqu"
+          COGNITO_USER_POOL_ID: "us-east-1_kQMxKGRA4"
+          COGNITO_CLIENT_ID: "7hpohtsm1oldaa04v7gd6j678a"
 
 Outputs:
   HackathonCognitoAuthorizerFunction:
